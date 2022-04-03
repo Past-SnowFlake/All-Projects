@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>My Selfie App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <!--stylesheet-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <a href="" id="link" download="myselfie.png"></a>
+
+            <!--Anchoor tag to download selfie. 
+            href=”” empty because we will update this with the selfie link from javascript
+        id=”link” - this id will be used for identifying this anchor tag using JS while updating its href value.
+    download=”myselfie.png” - the selfie will be saved with the name as myselfie.png, -->
+            <h1>Voice Selfie App
+
+                <img id="logo_img" src="selfie.jpeg">
+                <!--Adding your image-->
+            </h1>
+            <hr>
+            <h4 style="color:red;">Please press allow as soon as popup comes. After you give a voice command</h4>
+
+            <div class="form-group">
+                <h3>Say "Take my Selfie"</h3>
+                <label>Your voice output : </label>
+
+                <textarea class="form-control" id="textbox" readonly="true"></textarea>
+                <!--textarea
+        <textarea> tag - defines a multi-line text input control.
+            ● class=”form-control” - its a bootstrap class it adds the padding and
+            margin to the textarea.
+            ● id=”textbox” - This id will be used in JS code for updating the value of this
+            textarea.
+            ● readonly=”true” - If we set this to true, it means it won’t allow the user to
+            type anything inside this textarea. -->
+
+            </div>
+
+            <button class="btn btn-primary" onclick="start()">Start</button>
+            <!--btn - This will remove the default style of the button.
+○ btn-primary - This will add dark blue background color and dark
+blue border color to the button.
+● onclick=”start()” - when the button is clicked it will call this start() function.
+The functionality of the start function is, it will start recording our voice and
+convert it to text.
+-->
+            <p>Press the Start button</p>
+
+            <label>Your webcam : </label>
+            <div id="camera"></div>
+            <!-- div that will be used to reflect the webcam output:-->
+
+            <br>
+
+            <label>Your selife Will Display Here: </label>
+            <div id="result"></div>
+            <!-- div that will be used to hold the selfie taken by the webcam-->
+
+        </center>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
